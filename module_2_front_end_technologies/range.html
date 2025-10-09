@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Range Input Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .range-container {
+            margin: 20px 0;
+        }
+        
+        .range-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .current-value {
+            font-weight: bold;
+            color: #007acc;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        input[type="range"] {
+            flex: 1;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Range Input Examples</h1>
+    
+    <div class="range-container">
+        <label for="volume">Volume:</label>
+        <div class="range-wrapper">
+            <span>0</span>
+            <input type="range" id="volume" name="volume" min="0" max="10" value="5">
+            <span>10</span>
+            <span class="current-value" id="volume-value">5</span>
+        </div>
+        <div class="range-labels">
+            <span>Min</span>
+            <span>Max</span>
+        </div>
+    </div>
+    
+    <div class="range-container">
+        <label for="brightness">Brightness (%):</label>
+        <div class="range-wrapper">
+            <span>0</span>
+            <input type="range" id="brightness" name="brightness" min="0" max="100" value="75" step="5">
+            <span>100</span>
+            <span class="current-value" id="brightness-value">75</span>
+        </div>
+        <div class="range-labels">
+            <span>Off</span>
+            <span>Full</span>
+        </div>
+    </div>
+    
+    <div class="range-container">
+        <label for="temperature">Temperature (°C):</label>
+        <div class="range-wrapper">
+            <span>-10</span>
+            <input type="range" id="temperature" name="temperature" min="-10" max="40" value="20">
+            <span>40</span>
+            <span class="current-value" id="temperature-value">20</span>
+        </div>
+        <div class="range-labels">
+            <span>Cold</span>
+            <span>Hot</span>
+        </div> 
+    </div>
+
+    <script>
+        // Function to update the displayed value
+        function updateRangeValue(rangeId, valueId) {
+            const range = document.getElementById(rangeId);
+            const valueDisplay = document.getElementById(valueId);
+            
+            // Update value on input
+            range.addEventListener('input', function() {
+                valueDisplay.textContent = this.value;
+            });
+        }
+        
+        // Initialize all range inputs
+        updateRangeValue('volume', 'volume-value');
+        updateRangeValue('brightness', 'brightness-value');
+        updateRangeValue('temperature', 'temperature-value');
+    </script>
+</body>
+</html>
