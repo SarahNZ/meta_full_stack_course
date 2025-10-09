@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Input Types - Button Examples</title>
+</head>
+<body>
+    <h1>Button Input Type Examples</h1>
+    
+    <!-- Method 1: Using alert() - Simple popup message -->
+    <input type="button" value="Alert Message" onclick="alert('Hello! This is an alert message.')" />
+    <br><br>
+    
+    <!-- Method 2: Using a custom function with alert -->
+    <input type="button" value="Custom Function Alert" onclick="msg()" />
+    <br><br>
+    
+    <!-- Method 3: Displaying message in HTML element -->
+    <input type="button" value="Display in HTML" onclick="displayMessage()" />
+    <p id="message"></p>
+    <br>
+    
+    <!-- Method 4: Multiple actions on click -->
+    <input type="button" value="Multiple Actions" onclick="multipleActions()" />
+    <p id="status"></p>
+
+     <!-- Method 5: uses button tag instead of input type="button"-->
+    <button onclick="alert('Are you sure you want to continue?')"> 
+    <img src="https://yourserver.com/button_img.jpg" 
+        alt="Submit the form" height="64" width="64">
+ </button> 
+
+    <script>
+        // Function for Method 2
+        function msg() {
+            alert('Hello from the msg() function!');
+        }
+        
+        // Function for Method 3
+        function displayMessage() {
+            document.getElementById('message').innerHTML = 'Message displayed in HTML element!';
+            document.getElementById('message').style.color = 'blue';
+        }
+        
+        // Function for Method 4
+        function multipleActions() {
+            alert('First: Alert message');
+            document.getElementById('status').innerHTML = 'Button was clicked at: ' + new Date().toLocaleTimeString();
+        }
+    </script>
+</body>
+</html>
+
