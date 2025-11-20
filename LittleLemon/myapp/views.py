@@ -19,5 +19,8 @@ def form_view(request):
             )
             # Save the data to the database
             uc.save()
+            return JsonResponse({
+                'message': 'success'
+            })
         
-        return render(request, 'blog.html', {'form': form})
+    return render(request, 'blog.html', {'form': form})
