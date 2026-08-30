@@ -5,4 +5,3 @@ class BookingForm(forms.ModelForm):
     class Meta: 
         model = Booking;
         field = "__all__"
-
