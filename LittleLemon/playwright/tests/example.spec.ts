@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('has title', async ({ page }) => {
+  // No login needed! Browser already has auth cookies
   await page.goto('https://playwright.dev/');
 
   // Expect a title "to contain" a substring.
