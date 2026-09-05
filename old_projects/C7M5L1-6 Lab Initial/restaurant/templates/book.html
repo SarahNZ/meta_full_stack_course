@@ -4,12 +4,18 @@
 {% block content %}
 <section>
   <article>
-    <h1><!--Add title here --></h1>
+    <!-- Add your code in the line below  -->
+    <h1>Make a reservation</h1>
+
     <!--Begin row-->
     <div class="row">
       <!--Begin col-->
       <div class="column">
-        <pre id="bookings"></pre>
+        <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" id="button">
+        </form>
       </div>
       <!--End col-->
 
@@ -31,10 +37,11 @@
 
   </article>
 </section>
-
 <!-- Add your code inside the script tags below  -->
 <script>
-
+  console.log("Hello")
+  // Change date to an HTML date input
+  document.getElementById("id_reservation_date").type = "date"
 </script>
 {% endblock %}
 
