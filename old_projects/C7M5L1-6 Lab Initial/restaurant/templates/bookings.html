@@ -32,13 +32,11 @@
   </article>
 </section>
 
+<!-- Add your code inside the script tags below  -->
 <script>
-  // |safe is used so Django doesn't HTML-escape the JSON value
-bookings = JSON.parse('{{ bookings|safe }}');
-console.log(bookings);
-// 'NULL' argument passed, so bookings are not filtered or modified
-// '2' argument is passed, so the result is formated with 2 spaces indentation, making it easier to read
-pretty_json = JSON.stringify(bookings, null, 2);
+bookings = JSON.parse('{{ bookings|safe }}')
+console.log(bookings)
+pretty_json = JSON.stringify(bookings, null, 2)
 </script>
 {% endblock %}
 

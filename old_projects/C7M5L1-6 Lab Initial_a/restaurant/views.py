@@ -5,7 +5,6 @@ from .models import Menu
 from django.core import serializers
 from .models import Booking
 from datetime import datetime
-import json
 from .forms import BookingForm
 
 def home(request):
@@ -25,9 +24,9 @@ def book(request):
 
 def bookings(request):
     date = request.GET.get('date', datetime.today().date())
-    bookings = Booking.objects.all()
-    booking_json = serializers.serialize('json', bookings)
-    return render(request, "bookings.html", { "bookings": booking_json})
+    bookings = book.objects.all()
+    bookings.json = serializers.serialize('json', bookings)
+    return render(request, 'bookings.html', {'bookings': bookings.json})
 
 def menu(request):
     menu_data = Menu.objects.all()
